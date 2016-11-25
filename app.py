@@ -20,7 +20,7 @@ def translate():
 
     return render_template('translate.html', chars=chars, wordIn=wordIn)
 
-@app.route('/t/<input>', methods=['GET'])
+@app.route('/a/<input>', methods=['GET'])
 def t(input=None):
     wordIn = input.strip().lower()
     chars = []
@@ -28,7 +28,7 @@ def t(input=None):
     for char in wordIn:
         if char in abc:
             chars.append(abc[char])
-    return jsonify(chars)
+    return jsonify(input=wordIn, output=chars)
 
 if __name__ == '__main__':
     app.run(debug=False,host='0.0.0.0',port=5000)
