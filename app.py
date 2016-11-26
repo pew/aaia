@@ -8,9 +8,13 @@ abc = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six
 def index():
     return render_template('index.html')
 
-@app.route('/translate', methods=['POST'])
-def translate():
-    wordIn = request.form['abc'].strip().lower()
+@app.route('/t', methods=['POST'])
+@app.route('/t/<input>', methods=['GET'])
+def translate(input=None):
+    if request.method == 'POST':
+        wordIn = request.form['abc'].strip().lower()
+    if request.method == 'GET':
+        wordIn = input.strip().lower()
 
     chars = []
 
@@ -18,17 +22,10 @@ def translate():
         if char in abc:
             chars.append(abc[char])
 
-    return render_template('translate.html', chars=chars, wordIn=wordIn)
-
-@app.route('/a/<input>', methods=['GET'])
-def t(input=None):
-    wordIn = input.strip().lower()
-    chars = []
-
-    for char in wordIn:
-        if char in abc:
-            chars.append(abc[char])
-    return jsonify(input=wordIn, output=chars)
+    if request.method == 'POST':
+        return render_template('translate.html', chars=chars, wordIn=wordIn)
+    if request.method == 'GET':
+        return jsonify(input=wordIn, output=chars)
 
 if __name__ == '__main__':
     app.run(debug=False,host='0.0.0.0',port=5000)
