@@ -1,8 +1,0 @@
-<p>Your input: {% for w in wordIn|join('') %}<em>{{ w }}</em>{% endfor %}, just read this out:</p>
-{% for char in chars %}
-{% if char == ' ' %}
-<br>
-{% else %}
-<span style="line-height:1.5em" class="text-bold">{{ char[0]|upper }}</span> as in {{ char|capitalize }}<br>
-{% endif %}
-{% endfor %}
