@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"log"
+	"net/http"
 	"os"
 	"strings"
 )
@@ -16,15 +17,21 @@ func init() {
 }
 
 func main() {
+	http.HandleFunc("/", index)
+	http.ListenAndServe(":8080", nil)
+}
+
+func index(res http.ResponseWriter, req *http.Request) {
 	args := strings.ToLower(strings.Join(os.Args[1:], ""))
 	input := strings.Split(args, "")
 
 	d := aaia(input)
 
-	err := tpl.ExecuteTemplate(os.Stdout, "index.gohtml", d)
+	err := tpl.ExecuteTemplate(res, "index.gohtml", d)
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 }
 
 func aaia(in []string) []string {
