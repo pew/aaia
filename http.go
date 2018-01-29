@@ -5,7 +5,6 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	"os"
 	"strings"
 )
 
@@ -22,8 +21,16 @@ func main() {
 }
 
 func index(res http.ResponseWriter, req *http.Request) {
-	args := strings.ToLower(strings.Join(os.Args[1:], ""))
-	input := strings.Split(args, "")
+	var input []string
+
+	if req.Method == "POST" {
+		if err := req.ParseForm(); err != nil {
+			log.Fatalln(err)
+		}
+
+		data := strings.ToLower(req.FormValue("input"))
+		input = strings.Split(data, "")
+	}
 
 	d := aaia(input)
 
