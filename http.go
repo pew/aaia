@@ -27,9 +27,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 		if err := req.ParseForm(); err != nil {
 			log.Fatalln(err)
 		}
-
-		data := strings.ToLower(req.FormValue("input"))
-		input = strings.Split(data, "")
+		input = strings.Split(strings.ToLower(req.FormValue("input")), "")
 	}
 
 	d := aaia(input)
@@ -38,7 +36,6 @@ func index(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
 }
 
 func aaia(in []string) []string {
