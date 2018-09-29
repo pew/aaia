@@ -25,22 +25,28 @@ const abc = {
     "X": "X-ray",
     "Y": "Yankee",
     "Z": "Zulu"
-  };
+};
 
-  aaia = function(char) {
+aaia = function(char) {
     var char = char.toUpperCase().trim().split('');
+    var output = '';
     for (let index = 0; index < char.length; index++) {
         const element = char[index];
         if(element === ' '){
-            console.log();
+            // console.log();
+            //output += '';
         }
         if(!isNaN(element)){
-            console.log(element);
+            // console.log(element);
+            output += element + '\n';
         }
         if(abc[element]) {
-            console.log(abc[element])
+            // console.log(abc[element]);
+            output += abc[element] + '\n';
         }
     }
-  }
+    return output.trim()
+}
 
-  aaia('jonas 23 wagner')
+// aaia('jonas 23 wagner')
+// console.log(aaia('sup sup 44 sup'));

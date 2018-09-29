@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>aaia - a as in alfa</title>
+    <link rel="stylesheet" href="assets/normalize.min.css">
+    <link rel="stylesheet" href="assets/milligram.min.css">
+    <script src="index.js"></script>
+    <style>
+        body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="column column-67">
+                <h4>aaia - a as in alfa</h4>
+                <p>put in your word below to get the phonetic alphabet version of it. useful if you need to spell something out on the phone and they can't hear you in india.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column column-33">
+                <label for="aaia">enter you word:</label>
+                <input type="text" placeholder="ABC" id="aaia">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column column-33">
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var el = document.getElementById('aaia');
+        var output = document.getElementById('output');
+
+        var draw = function(data) {
+            output.innerHTML = '';
+            output.innerHTML = aaia(data);
+        };
+        el.oninput = () => {
+            draw(el.value);
+        };
+    </script>
+  </body>
+</html>
