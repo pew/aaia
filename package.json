@@ -1,0 +1,16 @@
+{
+  "name": "aaia",
+  "version": "1.0.0",
+  "description": "a as in alfa",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:pew_pew/aaia.git",
+  "author": "Jonas Wagner <boom@confuflux.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "cssnano": "^4.1.4",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
