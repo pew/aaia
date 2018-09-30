@@ -1,3 +1,11 @@
 # A as in Alpha
 
-go.
+a sample version is running [here](https://aaia.ilayk.com/)
+
+# installation
+
+```
+yarn
+parcel build index.html
+```
+
