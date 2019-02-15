@@ -2,31 +2,25 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>aaia - a as in alfa</title>
-    <link rel="stylesheet" href="assets/normalize.min.css">
-    <link rel="stylesheet" href="assets/milligram.min.css">
+    <link rel="stylesheet" href="assets/spectre.min.css">
     <script src="aaia.js" type="text/javascript"></script>
-    <style>
-        body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
-    </style>
   </head>
   <body>
     <div class="container">
-        <div class="row">
-            <div class="column">
-                <h3>aaia - a as in alfa</h3>
-                <p>put in your word below to get the phonetic alphabet version of it. useful if you need to spell something out on the phone and they can't hear you in india.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
+        <div class="columns">
+            <div class="column col-6 col-mx-auto">
+                <h2>aaia - a as in alfa</h2>
+                <p>put in your word below to get the phonetic alphabet version of it. useful if you need to spell something out on the phone and they can't hear you in <em>insert-country-here</em>.</p>
                 <label for="ainput">enter you word:</label>
-                <input type="text" placeholder="ABC" id="ainput">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column">
+                <div class="input-group">
+
+                    <input class="form-input" type="text" placeholder="booking code" id="ainput">
+                    <button id="submit-btn" class="btn btn-primary input-group-btn">submit</button>
+                    <button id="reset-btn" class="btn btn-error input-group-btn">reset</button>
+                </div>
+                <br>
                 <div id="output"></div>
             </div>
         </div>

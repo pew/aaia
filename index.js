@@ -1,5 +1,8 @@
 import aaia from './aaia';
 
+const resetBtn = document.getElementById('reset-btn');
+const submitBtn = document.getElementById('submit-btn');
+
 const el = document.getElementById('ainput');
 const output = document.getElementById('output');
 
@@ -29,3 +32,10 @@ el.oninput = () => {
   window.history.replaceState({}, '', `/?${params}`);
   draw(el.value);
 };
+
+resetBtn.onclick = () => {
+  output.innerHTML = '';
+  el.value = '';
+  window.history.replaceState({}, '', '/');
+};
+submitBtn.onclick = () => draw(el.value);
