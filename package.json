@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "a as in alfa",
   "main": "index.js",
-  "repository": "git@bitbucket.org:pew_pew/aaia.git",
+  "repository": "git@github.com:pew/aaia.git",
   "author": "Jonas Wagner <boom@confuflux.com>",
   "license": "MIT",
   "private": true,

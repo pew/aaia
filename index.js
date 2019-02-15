@@ -3,6 +3,9 @@ import aaia from './aaia';
 const el = document.getElementById('ainput');
 const output = document.getElementById('output');
 
+const params = new URLSearchParams(document.location.search.slice(1));
+const query = params.get('q');
+
 const draw = function (data) {
   output.innerHTML = '';
   const d = aaia(data);
@@ -15,6 +18,14 @@ const draw = function (data) {
   }
   output.innerHTML = o.trim();
 };
+
+if (query) {
+  el.value = query;
+  draw(query);
+}
+
 el.oninput = () => {
+  params.set('q', el.value);
+  window.history.replaceState({}, '', `/?${params}`);
   draw(el.value);
 };
