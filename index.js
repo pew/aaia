@@ -24,18 +24,24 @@ const draw = function (data) {
 
 if (query) {
   el.value = query;
+  document.title = `aaia - ${query}`;
   draw(query);
 }
 
 el.oninput = () => {
   params.set('q', el.value);
+  document.title = `aaia - ${el.value}`;
   window.history.replaceState({}, '', `/?${params}`);
   draw(el.value);
+  if (el.value.length === 0) {
+    document.title = 'aaia - a as in alfa';
+  }
 };
 
 resetBtn.onclick = () => {
   output.innerHTML = '';
   el.value = '';
+  document.title = 'aaia - a as in alfa';
   window.history.replaceState({}, '', '/');
 };
 submitBtn.onclick = () => draw(el.value);
