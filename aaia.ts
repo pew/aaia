@@ -1,4 +1,4 @@
-const abc = {
+const abc:JSON = <JSON><unknown> {
   A: 'Alfa',
   B: 'Bravo',
   C: 'Charlie',
@@ -27,7 +27,7 @@ const abc = {
   Z: 'Zulu',
 };
 
-function aaia(input) {
+function aaia(input: string) {
   const char = input.toUpperCase().trim().split('');
   const output = [];
   for (let index = 0; index < char.length; index += 1) {
@@ -44,5 +44,3 @@ function aaia(input) {
 }
 
 export default aaia;
-
-// console.log(aaia('was geht 23'));
