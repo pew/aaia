@@ -1,4 +1,8 @@
-const abc:JSON = <JSON><unknown> {
+interface alphabet {
+  [name: string]: string
+}
+
+const abc:alphabet = {
   A: 'Alfa',
   B: 'Bravo',
   C: 'Charlie',

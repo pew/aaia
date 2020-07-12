@@ -1,15 +1,15 @@
 import aaia from './aaia';
 
-const resetBtn = document.getElementById('reset-btn');
-const submitBtn = document.getElementById('submit-btn');
+const resetBtn = document.getElementById('reset-btn')!;
+const submitBtn = document.getElementById('submit-btn')!;
 
-const el = document.getElementById('ainput');
-const output = document.getElementById('output');
+const el = document.getElementById('ainput')!;
+const output = document.getElementById('output')!;
 
 const params = new URLSearchParams(document.location.search.slice(1));
 const query = params.get('q');
 
-const draw = function (data) {
+const draw = function (data: string) {
   output.innerHTML = '';
   const d = aaia(data);
   let o = '';
