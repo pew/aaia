@@ -2,23 +2,22 @@
   "name": "aaia",
   "version": "1.0.0",
   "description": "a as in alfa",
-  "main": "index.js",
   "repository": "git@github.com:pew/aaia.git",
   "author": "Jonas Wagner <boom@confuflux.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint '*.js' '*.html' --fix",
+    "lint": "eslint '*.js' '*.ts' '*.html' --fix",
     "build": "parcel build index.html",
     "start": "parcel index.html"
   },
   "private": true,
   "devDependencies": {
-    "cssnano": "^4.1.4",
-    "eslint": "^7.0.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-html": "^6.0.2",
-    "eslint-plugin-import": "^2.14.0",
-    "parcel-bundler": "^1.10.1",
-    "typescript": "^4.0.0-dev.20200709"
+    "cssnano": "^5.0.2",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "parcel": "*",
+    "typescript": "^4.2.4"
   }
 }

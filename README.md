@@ -5,7 +5,7 @@ a sample version is running [here](https://aaia.ilayk.com/)
 # installation
 
 ```
-yarn
+npm i
 parcel build index.html
 ```
 
